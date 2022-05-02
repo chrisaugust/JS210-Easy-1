@@ -36,22 +36,31 @@
 // - return false
 //
 // CODE
+// version 1
+// function isLeapYear(year) {
+//   if (year <= 0 || typeof(year) !== 'number') {
+//     return undefined;
+//   }
+//
+//   if (year % 4 === 0) {
+//     if (year % 100 === 0) {
+//       if (year % 400 === 0) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     return true;
+//   }
+//   return false;
+// }
+//
+// version 2
 
 function isLeapYear(year) {
-  if (year <= 0 || typeof (year) !== 'number') {
-    return undefined;
-  }
-
-  if (year % 4 === 0) {
-    if (year % 100 === 0) {
-      if (year % 400 === 0) {
-        return true;
-      }
-      return false;
-    }
-    return true;
-  }
-  return false;
+  if (year <= 0 || typeof (year) !== 'number') return undefined;
+  if (year % 400 === 0) return true;
+  if (year % 100 === 0) return false;
+  return (year % 4 === 0);
 }
 
 // TESTS
